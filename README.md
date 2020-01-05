@@ -16,10 +16,11 @@ A simple todo list app with React and TypeScript
 - Run `yarn start`. It will start the webpack-dev-server.
 
 ## Unit tests
-
+```sh
 # Run tests
 - yarn test
 # Run tests watcher
 - yarn test:watch
 # Generate tests coverage report
 - yarn test:coverage
+```
