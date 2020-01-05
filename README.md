@@ -2,12 +2,12 @@
 
 A simple todo list app with React and TypeScript
 
-### Features
+## Features
 * Done in Reactjs with Typescript
 * Redux state management
 * webpack and webpack-dev-server configured
 
-### Prerequisites
+## Prerequisites
 * node
 * yarn 
 
@@ -15,20 +15,11 @@ A simple todo list app with React and TypeScript
 - Run `yarn install` after cloning the repo.
 - Run `yarn start`. It will start the webpack-dev-server.
 
-### Unit tests
-# Run tests
-* yarn test
-# Run tests watcher
-* yarn test:watch
-# Generate tests coverage report
-* yarn test:coverage
-
 ## Unit tests
 
 # Run tests
-$ npm run test
+- yarn test
 # Run tests watcher
-$ npm run test:watch
+- yarn test:watch
 # Generate tests coverage report
-$ npm run test:coverage
- 
+- yarn test:coverage
