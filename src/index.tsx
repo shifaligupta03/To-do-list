@@ -8,12 +8,22 @@ import { Provider } from "react-redux";
 import App from "./components/App/App.container";
 import { ToDoPage } from "./pages/todoPage";
 import { rootReducer } from "./reducers";
+import { loadState, saveState } from "./libs/localStorage";
+
+const persistedState = loadState();
 
 const history = createBrowserHistory();
 const store = createStore(
   rootReducer(history),
+  persistedState,
   applyMiddleware(routerMiddleware(history))
 );
+
+store.subscribe(() => {
+  saveState({
+    todo: store.getState().todo
+  });
+});
 
 ReactDOM.render(
   <Provider store={store}>

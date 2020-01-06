@@ -29,7 +29,7 @@ interface ToDoFormProps {
 export const ToDoForm: React.FC<any> = ({ addToDoTask }: ToDoFormProps) => {
   const addTaskField = React.useRef(null);
 
-  const thisInMilliseconds = (): number => {
+  const convertTimeInMilliseconds = (): number => {
     const date: Date = new Date();
     return date.getTime();
   };
@@ -41,7 +41,7 @@ export const ToDoForm: React.FC<any> = ({ addToDoTask }: ToDoFormProps) => {
       return false;
     }
     addToDoTask({
-      id: thisInMilliseconds(),
+      id: convertTimeInMilliseconds(),
       text: addTaskField.current.value,
       isCompleted: false
     });

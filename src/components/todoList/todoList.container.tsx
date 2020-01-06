@@ -3,6 +3,7 @@ import * as Redux from "redux";
 import { ToDoList } from "./todoList";
 import { toggleToDo } from "../../actions/todo";
 import { TodoInterface } from "../../interfaces/interfaces";
+import { loadState } from "../../libs/localStorage";
 
 interface StateProps {
   tasks: TodoInterface[];
@@ -14,7 +15,7 @@ interface DispatchProps {
 
 function mapStateToProps(state): StateProps {
   return {
-    tasks: JSON.parse(localStorage.getItem("todoTasks")) || []
+    tasks: loadState().todo.todoTasks || []
   };
 }
 

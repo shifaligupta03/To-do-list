@@ -1,8 +1,9 @@
 import { ADD_TODO, TOGGLE_TODO } from "../actions/todo";
 import { AppStateInterface } from "../interfaces/interfaces";
+import { loadState } from '../libs/localStorage';
 
 const initialState: AppStateInterface = {
-  todoTasks: JSON.parse(localStorage.getItem("todoTasks")) || []
+  todoTasks: loadState() || []
 };
 
 export default (
@@ -24,6 +25,5 @@ export default (
       break;
     }
   }
-  localStorage.setItem("todoTasks", JSON.stringify(newState.todoTasks));
   return newState;
 };
