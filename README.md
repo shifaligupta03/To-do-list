@@ -24,3 +24,15 @@ A simple todo list app with React and TypeScript
 # Generate tests coverage report
 - yarn test:coverage
 ```
+
+Find Test coverage report at: coverage/lcov-report/index.html
+
+## Lint
+```sh
+- yarn lint
+```
+
+## Code Formatting
+```sh
+- yarn format
+```
