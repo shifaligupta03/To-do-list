@@ -9,6 +9,6 @@ const Container = styled("h1")`
   font-size: 36px;
 `;
 
-export const Header: React.FC<React.ReactNode> = () => (
+export const Header: React.StatelessComponent<{}> = () => (
   <Container>Things To Do</Container>
 );

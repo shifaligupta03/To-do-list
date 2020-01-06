@@ -26,7 +26,9 @@ interface ToDoFormProps {
   addToDoTask: (task: TodoInterface) => void;
 }
 
-export const ToDoForm: React.FC<any> = ({ addToDoTask }: ToDoFormProps) => {
+export const ToDoForm: React.FC<ToDoFormProps> = ({
+  addToDoTask
+}: ToDoFormProps) => {
   const addTaskField = React.useRef(null);
 
   const convertTimeInMilliseconds = (): number => {
@@ -34,7 +36,9 @@ export const ToDoForm: React.FC<any> = ({ addToDoTask }: ToDoFormProps) => {
     return date.getTime();
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>): any => {
+  const handleSubmit = (
+    e: React.FormEvent<HTMLFormElement>
+  ): boolean | void => {
     e.preventDefault();
     if (!addTaskField.current.value) {
       addTaskField.current.focus();
@@ -49,7 +53,11 @@ export const ToDoForm: React.FC<any> = ({ addToDoTask }: ToDoFormProps) => {
   };
 
   return (
-    <FormContainer onSubmit={e => handleSubmit(e)}>
+    <FormContainer
+      onSubmit={(e: React.FormEvent<HTMLFormElement>): boolean | void =>
+        handleSubmit(e)
+      }
+    >
       <FormInput
         type="text"
         placeholder="Enter your to do here"

@@ -10,19 +10,20 @@ interface StateProps {
 }
 
 interface DispatchProps {
-  toggleToDoTask: (task: number) => Redux.Dispatch<any>;
+  toggleToDoTask: (task: number) => void;
 }
 
-function mapStateToProps(state): StateProps {
+function mapStateToProps(): StateProps {
   return {
     tasks: loadState().todo.todoTasks || []
   };
 }
 
-function mapDispatchToProps(dispatch): DispatchProps {
+function mapDispatchToProps(
+  dispatch: (action: Redux.Action) => void
+): DispatchProps {
   return {
-    toggleToDoTask: (taskId): Redux.Dispatch<any> =>
-      dispatch(toggleToDo(taskId))
+    toggleToDoTask: (taskId: number): void => dispatch(toggleToDo(taskId))
   };
 }
 

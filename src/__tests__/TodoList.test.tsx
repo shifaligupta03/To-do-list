@@ -8,29 +8,29 @@ import { Header } from '../components/header/header';
 
 const addTodo = (list, item) => [item, ...list];
 
-describe('TodoList Component', () => {
+// describe('TodoList Component', () => {
 
-  beforeAll(() => {
-    Enzyme.configure({ adapter: new Adapter() })
-  })
+//   beforeAll(() => {
+//     Enzyme.configure({ adapter: new Adapter() })
+//   })
 
-  it('renders correctly', () => {
-    const component = shallow(<ToDoList />)
-    expect(component).toMatchSnapshot()
-  })
-})
+//   it('renders correctly', () => {
+//     const component = shallow(<ToDoList/>)
+//     expect(component).toMatchSnapshot()
+//   })
+// })
 
-describe('TodoForm Component', () => {
+// describe('TodoForm Component', () => {
 
-  beforeAll(() => {
-    Enzyme.configure({ adapter: new Adapter() })
-  })
+//   beforeAll(() => {
+//     Enzyme.configure({ adapter: new Adapter() })
+//   })
 
-  it('renders correctly', () => {
-    const component = shallow(<ToDoForm />)
-    expect(component).toMatchSnapshot()
-  })
-})
+//   it('renders correctly', () => {
+//     const component = shallow(<ToDoForm />)
+//     expect(component).toMatchSnapshot()
+//   })
+// })
 
 describe('Header component', () => {
   beforeAll(() => {

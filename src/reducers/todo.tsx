@@ -1,6 +1,6 @@
 import { ADD_TODO, TOGGLE_TODO } from "../actions/todo";
 import { AppStateInterface } from "../interfaces/interfaces";
-import { loadState } from '../libs/localStorage';
+import { loadState } from "../libs/localStorage";
 
 const initialState: AppStateInterface = {
   todoTasks: loadState() || []

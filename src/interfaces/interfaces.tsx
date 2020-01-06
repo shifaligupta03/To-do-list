@@ -1,3 +1,4 @@
+import { RouterState } from "connected-react-router";
 export interface TodoInterface {
   id: number;
   text: string;
@@ -17,6 +18,11 @@ export interface BASEACTIONTYPE {
   type: TODOActionTypes;
 }
 
+export interface ApplicationReducerState {
+  router?: RouterState;
+  todo?: AppStateInterface;
+}
+
 export interface AppStateInterface {
-  todoTasks: any[];
+  todoTasks?: TodoInterface[] | [];
 }

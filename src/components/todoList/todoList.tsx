@@ -15,7 +15,15 @@ const ListItemText = styled.span`
   cursor: pointer;
 `;
 
-export const ToDoList: React.FC<any> = ({ tasks = [], toggleToDoTask }) => {
+interface ToDoListProps {
+  tasks: TodoInterface[];
+  toggleToDoTask: (task: number) => void;
+}
+
+export const ToDoList: React.FC<ToDoListProps> = ({
+  tasks = [],
+  toggleToDoTask
+}) => {
   const [allTasks, setTasks] = React.useState(tasks);
 
   React.useEffect(() => {
@@ -23,9 +31,11 @@ export const ToDoList: React.FC<any> = ({ tasks = [], toggleToDoTask }) => {
   }, [tasks]);
 
   const renderTasks = (): JSX.Element[] =>
-    allTasks.map(({ id, isCompleted, text }: TodoInterface, index: number) => (
+    allTasks.map(({ id, isCompleted, text }: TodoInterface) => (
       <ListItem key={id} isCompleted={isCompleted}>
-        <ListItemText onClick={e => toggleToDoTask(id)}>{text}</ListItemText>
+        <ListItemText onClick={(): void => toggleToDoTask(id)}>
+          {text}
+        </ListItemText>
       </ListItem>
     ));
 

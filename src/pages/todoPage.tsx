@@ -14,12 +14,10 @@ const Container = styled("div")`
   position: relative;
 `;
 
-export const ToDoPage: React.FC<any> = () => {
-  return (
-    <Container>
-      <Header />
-      <ToDoForm />
-      <ToDoList />
-    </Container>
-  );
-};
+export const ToDoPage: React.StatelessComponent<{}> = () => (
+  <Container>
+    <Header />
+    <ToDoForm />
+    <ToDoList />
+  </Container>
+);
