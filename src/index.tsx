@@ -5,10 +5,10 @@ import { createStore, applyMiddleware } from "redux";
 import { ConnectedRouter, routerMiddleware } from "connected-react-router";
 import { createBrowserHistory } from "history";
 import { Provider } from "react-redux";
-import App from "./components/App/App.container";
-import { ToDoPage } from "./pages/todoPage";
+import App from "./components/app";
+import { ToDoPage } from "./pages/todo";
 import { rootReducer } from "./reducers";
-import { loadState, saveState } from "./libs/localStorage";
+import { loadState, saveState } from "./libs/local-storage";
 
 const persistedState = loadState();
 

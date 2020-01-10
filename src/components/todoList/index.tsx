@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
 import * as Redux from "redux";
-import { ToDoList } from "./todoList";
+import { ToDoList } from "./todo-list";
 import { toggleToDo } from "../../actions/todo";
 import { TodoInterface } from "../../interfaces/interfaces";
-import { loadState } from "../../libs/localStorage";
+import { loadState } from "../../libs/local-storage";
 
 interface StateProps {
   tasks: TodoInterface[];

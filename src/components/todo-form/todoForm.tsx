@@ -23,13 +23,19 @@ const FormSubmit = styled("input")`
 `;
 
 interface ToDoFormProps {
+  tasks: TodoInterface[];
   addToDoTask: (task: TodoInterface) => void;
 }
 
 export const ToDoForm: React.FC<ToDoFormProps> = ({
+  tasks,
   addToDoTask
 }: ToDoFormProps) => {
   const addTaskField = React.useRef(null);
+
+  React.useEffect(()=>{
+    addTaskField.current.value = null;
+  }, [tasks]);
 
   const convertTimeInMilliseconds = (): number => {
     const date: Date = new Date();
@@ -54,9 +60,7 @@ export const ToDoForm: React.FC<ToDoFormProps> = ({
 
   return (
     <FormContainer
-      onSubmit={(e: React.FormEvent<HTMLFormElement>): boolean | void =>
-        handleSubmit(e)
-      }
+      onSubmit={handleSubmit}
     >
       <FormInput
         type="text"

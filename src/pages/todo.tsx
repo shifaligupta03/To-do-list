@@ -1,8 +1,8 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { Header } from "../components/header/header";
-import ToDoForm from "../components/todoForm/todoForm.container";
-import ToDoList from "../components/todoList/todoList.container";
+import ToDoForm from "../components/todo-form/index";
+import ToDoList from "../components/todoList";
 
 const Container = styled("div")`
   background-color: #fff;
