@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "@emotion/styled";
 import { TodoInterface } from "../../interfaces/interfaces";
+import { convertTimeInMilliseconds } from "../../libs/convert-time-in-milliseconds";
 
 const FormContainer = styled("form")`
   padding: 10px 0;
@@ -37,10 +38,10 @@ export const ToDoForm: React.FC<ToDoFormProps> = ({
     addTaskField.current.value = null;
   }, [tasks]);
 
-  const convertTimeInMilliseconds = (): number => {
-    const date: Date = new Date();
-    return date.getTime();
-  };
+  // const convertTimeInMilliseconds = (): number => {
+  //   const date: Date = new Date();
+  //   return date.getTime();
+  // };
 
   const handleSubmit = (
     e: React.FormEvent<HTMLFormElement>
