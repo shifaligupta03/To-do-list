@@ -19,4 +19,7 @@ function mapDispatchToProps(
   };
 }
 
-export default connect(() => ({}), mapDispatchToProps)(ToDoForm);
+export const TodoFormWrapper = connect(
+  () => ({}),
+  mapDispatchToProps
+)(ToDoForm);

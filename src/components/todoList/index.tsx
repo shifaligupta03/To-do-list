@@ -27,4 +27,7 @@ function mapDispatchToProps(
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(ToDoList);
+export const TodoListWrapper = connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ToDoList);
